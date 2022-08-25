@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,8 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/das', function () {
-    return view('welcome');
-});
+Route::get('/',[WelcomeController::class,'welcome']);
 
 Route::post('login',[LoginController::class,'login'])->name('login');
-Route::post('getUser',[LoginController::class,'getUser'])->name('getUser');
+Route::get('/home',[loginController::class,'home'])->name('home');
+Route::get('logout',[LoginController::class,'logout'])->name('logout');
