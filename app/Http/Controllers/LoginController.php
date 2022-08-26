@@ -29,22 +29,17 @@ class LoginController extends Controller
 
    public function logout()
    {
+        // $token = session()->get('user')->access_token;
+        // $params =   [
+        // 'headers' =>[
+        //                 'Authorization'=>"Bearer $token"
+        //             ]
+        // ];
+        // $data = new Api('GET','all/hotel',$params);
+        // $data->apiResource();
+
         session()->forget('user');
         return view('welcome');
    }
-
-   public function home()
-   {
-    $token = session()->get('user')->access_token;
-    $params =   [
-        'headers' =>[
-                        'Authorization'=>"Bearer $token"
-                    ]
-        ];
-        $data = new Api('GET','all/hotel',$params);
-        $hotels = $data->apiResource();
-        return view('dashboard')->with(compact('hotels'));
-   }
-
 
 }

@@ -33,7 +33,7 @@
                     <a class="nav-link active" aria-current="page" href="{{route('home')}}">Inicio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a href="{{route('create.hotel')}}" class="nav-link">Nuevo Hotel</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,7 +55,7 @@
               </div>
             </div>
           </nav>
-{{-- @include('layouts.notification') --}}
+@include('layouts.notify')
         <main class="py-4">
             <div class="container-fluid">
                 <div class="row">

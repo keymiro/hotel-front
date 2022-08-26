@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HotelController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\WelcomeController;
 
@@ -18,5 +19,14 @@ use App\Http\Controllers\WelcomeController;
 Route::get('/',[WelcomeController::class,'welcome']);
 
 Route::post('login',[LoginController::class,'login'])->name('login');
-Route::get('/home',[loginController::class,'home'])->name('home');
 Route::get('logout',[LoginController::class,'logout'])->name('logout');
+
+Route::get('home',[HotelController::class,'index'])->name('home');
+Route::get('create/hotel',[HotelController::class,'create'])->name('create.hotel');
+Route::post('store/hotel',[HotelController::class,'store'])->name('store.hotel');
+Route::get('edit/{id}/hotel',[HotelController::class,'edit'])->name('edit.hotel');
+Route::put('update/{id}/hotel',[HotelController::class,'update'])->name('update.hotel');
+Route::delete('detele/{id}/hotel',[HotelController::class,'destroy'])->name('delete.hotel');
+Route::get('showWithRooms/{id}/hotel',[HotelController::class,'showWithRooms'])->name('showWithRooms.hotel');
+
+
