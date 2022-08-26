@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Ciudad</label>
-          <input type="ciudad" name="city" class="form-control" id="inputPassword4">
+          <input type="text" name="city" class="form-control" id="inputPassword4">
         </div>
         <div class="col-6">
           <label for="inputAddress" class="form-label">Dirección</label>

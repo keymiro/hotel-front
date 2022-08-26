@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\WelcomeController;
@@ -28,5 +29,11 @@ Route::get('edit/{id}/hotel',[HotelController::class,'edit'])->name('edit.hotel'
 Route::put('update/{id}/hotel',[HotelController::class,'update'])->name('update.hotel');
 Route::delete('detele/{id}/hotel',[HotelController::class,'destroy'])->name('delete.hotel');
 Route::get('showWithRooms/{id}/hotel',[HotelController::class,'showWithRooms'])->name('showWithRooms.hotel');
+
+Route::get('create/room/{id}/hotel',[RoomController::class,'create'])->name('create.room');
+Route::post('store/room',[RoomController::class,'store'])->name('store.room');
+Route::get('edit/{id}/room',[RoomController::class,'edit'])->name('edit.room');
+Route::put('update/{id}/room',[RoomController::class,'update'])->name('update.room');
+Route::delete('detele/{id}/room',[RoomController::class,'destroy'])->name('delete.room');
 
 

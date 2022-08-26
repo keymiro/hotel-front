@@ -55,7 +55,7 @@
         </div>
 </div>
 <div class="col-4 mx-2">
-    <a href="{{route('create.hotel')}}" class="btn btn-success my-2">Nueva Habitación</a>
+    <a href="{{route('create.room',$hotel[0]->id)}}" class="btn btn-success my-2">Nueva Habitación</a>
 </div>
 
 <div class="table-responsive">
@@ -78,8 +78,8 @@
                     <td>{{$r->type_rooms}}</td>
                     <td>
                         <div class="btn-group">
-                            <a href="" class="btn btn-success ">Editar</a>
-                            <form  action=""
+                            <a href="{{route('edit.room',$r->id)}}" class="btn btn-success ">Editar</a>
+                            <form  action="{{route('delete.room',$r->id)}}"
                                 method="post">
                             @csrf @method('DELETE')
                             <button class="btn btn-danger" onclick="return confirm('Estás seguro que desea eliminar el registro?');">Eliminar
