@@ -39,7 +39,7 @@ class LoginController extends Controller
         $data->apiResource();
 
         session()->forget('user');
-        return view('welcome');
+        return  redirect()->route('welcome');
    }
 
 }
