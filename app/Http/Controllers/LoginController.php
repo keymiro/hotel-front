@@ -29,14 +29,14 @@ class LoginController extends Controller
 
    public function logout()
    {
-        // $token = session()->get('user')->access_token;
-        // $params =   [
-        // 'headers' =>[
-        //                 'Authorization'=>"Bearer $token"
-        //             ]
-        // ];
-        // $data = new Api('GET','all/hotel',$params);
-        // $data->apiResource();
+        $token = session()->get('user')->access_token;
+        $params =   [
+        'headers' =>[
+                        'Authorization'=>"Bearer $token"
+                    ]
+        ];
+        $data = new Api('GET','all/hotel',$params);
+        $data->apiResource();
 
         session()->forget('user');
         return view('welcome');
