@@ -35,7 +35,7 @@ class LoginController extends Controller
                         'Authorization'=>"Bearer $token"
                     ]
         ];
-        $data = new Api('GET','all/hotel',$params);
+        $data = new Api('GET','logout',$params);
         $data->apiResource();
 
         session()->forget('user');
